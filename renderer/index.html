@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion Universitaire</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ LOGIN ============ -->
+  <div id="login-screen" class="login-screen">
+    <form class="login-card" id="login-form">
+      <div class="login-logo">🎓</div>
+      <h1>Gestion Universitaire</h1>
+      <p class="login-sub">Connectez-vous à votre espace</p>
+      <label>Nom d'utilisateur
+        <input type="text" id="login-username" autocomplete="off" required>
+      </label>
+      <label>Mot de passe
+        <input type="password" id="login-password" required>
+      </label>
+      <div class="login-error" id="login-error"></div>
+      <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+      <button type="button" class="btn btn-block" id="btn-guest" style="margin-top:10px">🔓 Continuer sans connexion (mode démo)</button>
+      <div class="login-hint">
+        Démo : <code>admin/admin</code> · <code>prof.dupont/prof123</code> · <code>e20001/etu123</code>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============ APP ============ -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand">🎓 <span>UniGest</span></div>
+      <nav id="nav"></nav>
+      <div class="sidebar-footer">
+        <div id="current-user"></div>
+        <button class="btn btn-ghost btn-sm" id="btn-logout">Déconnexion</button>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><h2 id="page-title">Tableau de bord</h2></header>
+      <section class="content" id="content"></section>
+    </main>
+  </div>
+
+  <!-- ============ MODAL ============ -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-head"><h3 id="modal-title"></h3>
+        <button class="modal-close" id="modal-close">×</button></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <div id="print-area" class="print-area"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
